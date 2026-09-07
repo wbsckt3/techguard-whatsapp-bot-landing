@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="es" prefix="og: http://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechGuard — WhatsApp IA Bot Factory</title>
+  <meta name="description" content="Bot WhatsApp a la medida: respuestas automáticas, IA/LLM, menús, pedidos, citas, facturas, escalado a humano, notificaciones y registro de conversaciones." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="theme-color" content="#0a1f18" />
+  <link rel="canonical" href="https://wbsckt3.github.io/techguard-whatsapp-bot-landing/" />
+  <link rel="icon" href="assets/techguard-mark.svg" type="image/svg+xml" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://wbsckt3.github.io/techguard-whatsapp-bot-landing/" />
+  <meta property="og:title" content="TechGuard — WhatsApp IA Bot Factory" />
+  <meta property="og:description" content="Bot WhatsApp a la medida de tu empresa: IA, pedidos, citas, facturas, menús y escalado a humano." />
+  <meta property="og:image" content="https://wbsckt3.github.io/techguard-whatsapp-bot-landing/assets/techguard-mark.svg" />
+  <meta property="og:site_name" content="TechGuard" />
+  <meta property="og:locale" content="es_ES" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TechGuard — WhatsApp IA Bot Factory" />
+  <meta name="twitter:description" content="Bot WhatsApp a la medida: IA, pedidos, citas, facturas, menús y escalado a humano." />
+  <meta name="twitter:image" content="https://wbsckt3.github.io/techguard-whatsapp-bot-landing/assets/techguard-mark.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TechGuard",
+    "url": "https://wbsckt3.github.io/techguard-whatsapp-bot-landing/",
+    "logo": "https://wbsckt3.github.io/techguard-whatsapp-bot-landing/assets/techguard-mark.svg",
+    "email": "techguard_whatsappbot@gmail.com"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "TechGuard WhatsApp IA Bot Factory",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "url": "https://wbsckt3.github.io/techguard-whatsapp-bot-landing/",
+    "description": "Fábrica white-label para orquestar bots WhatsApp con IA: n empresas, Meta Cloud API, skills, flujos y RUNBOOK de deploy.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "COP"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "TechGuard",
+      "url": "https://wbsckt3.github.io/techguard-whatsapp-bot-landing/"
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg0: #06140f;
+      --bg1: #0a1f18;
+      --ink: #ecf6f0;
+      --muted: #9bb5a8;
+      --leaf: #3ecf8e;
+      --leaf-deep: #1a9f63;
+      --line: rgba(62, 207, 142, 0.22);
+      --header-h: 68px;
+      --danger: #f87171;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Source Sans 3", sans-serif;
+      background: var(--bg0);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1080px, calc(100% - 32px)); margin-inline: auto; }
+
+    .site-header {
+      position: fixed; inset: 0 0 auto 0; z-index: 40; height: var(--header-h);
+      background: rgba(6, 20, 15, 0.82);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .site-header__inner {
+      height: 100%;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .brand {
+      font-family: Sora, sans-serif;
+      font-weight: 700;
+      font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+      letter-spacing: -0.04em;
+      line-height: 1.15;
+      display: inline-flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.35em 0.5em;
+      color: var(--ink);
+      min-width: 0;
+      max-width: 100%;
+      flex: 1;
+    }
+    .brand__name { flex-shrink: 0; }
+    .brand__name em {
+      font-style: normal;
+      color: var(--leaf);
+    }
+    .brand__product {
+      font-size: 0.72em;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      color: var(--muted);
+      white-space: normal;
+      overflow: visible;
+      text-overflow: unset;
+    }
+    @media (max-width: 560px) {
+      :root { --header-h: 76px; }
+      .brand {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+        line-height: 1.2;
+      }
+      .brand__product {
+        font-size: 0.68em;
+        letter-spacing: 0.02em;
+        max-width: 100%;
+      }
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 18px; border-radius: 10px; font-weight: 600; font-size: 0.95rem;
+      border: 1px solid var(--line); background: transparent; color: var(--ink);
+      font-family: Sora, sans-serif;
+      cursor: pointer;
+    }
+    .btn--primary {
+      background: linear-gradient(135deg, var(--leaf-deep), #147a4c);
+      border-color: var(--leaf);
+      color: #04110c;
+    }
+    .btn--lg { padding: 14px 24px; font-size: 1rem; }
+    .btn:disabled { opacity: 0.55; cursor: not-allowed; }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex; align-items: flex-end;
+      padding: calc(var(--header-h) + 48px) 0 72px;
+      overflow: hidden;
+    }
+    .hero__bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 20%, rgba(62, 207, 142, 0.28), transparent 55%),
+        radial-gradient(ellipse 50% 40% at 15% 80%, rgba(26, 159, 99, 0.2), transparent 50%),
+        linear-gradient(165deg, #0c241c 0%, #06140f 45%, #03100b 100%);
+    }
+    .hero__bg::after {
+      content: "";
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(236, 246, 240, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(236, 246, 240, 0.1) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent 88%);
+      pointer-events: none;
+    }
+    .hero__content { position: relative; z-index: 1; max-width: 38rem; }
+    .hero__brand-row { margin: 0 0 18px; }
+    .hero__brand {
+      margin: 0;
+      font-family: Sora, sans-serif;
+      font-size: clamp(1.85rem, 5vw, 2.35rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      color: var(--ink);
+    }
+    .hero__brand em {
+      font-style: normal;
+      color: var(--leaf);
+    }
+    .hero__product {
+      margin: 2px 0 0;
+      font-family: Sora, sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+    .hero__title {
+      margin: 0 0 12px;
+      font-family: Sora, sans-serif;
+      font-size: clamp(1.05rem, 2.8vw, 1.22rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      color: var(--ink);
+    }
+    .hero__lead {
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 0.98rem;
+      line-height: 1.5;
+      max-width: 34rem;
+    }
+    .hero__ctas { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .hero__ctas .btn--ghost {
+      background: transparent;
+      border-color: var(--line);
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .section { padding: 72px 0; }
+    .section--alt {
+      background: linear-gradient(180deg, #0a1f18, #071610);
+      border-block: 1px solid var(--line);
+    }
+    .section__tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      font-family: Sora, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--leaf);
+    }
+    .section__title {
+      margin: 0 0 12px;
+      font-family: Sora, sans-serif;
+      font-size: clamp(1.45rem, 3vw, 1.9rem);
+      letter-spacing: -0.03em;
+    }
+    .section__lead {
+      margin: 0 0 28px;
+      color: var(--muted);
+      max-width: 40rem;
+      font-size: 1.05rem;
+    }
+
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 12px 14px;
+      margin: 0 0 28px;
+      padding: 0;
+      list-style: none;
+    }
+    .cap-grid li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(10, 31, 24, 0.55);
+      color: var(--ink);
+      font-size: 0.98rem;
+      line-height: 1.35;
+    }
+    .cap-grid__icon {
+      flex-shrink: 0;
+      font-size: 1.25rem;
+      line-height: 1.2;
+      width: 1.6em;
+      text-align: center;
+    }
+    .cap-grid__label {
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+    .cap-closer {
+      margin: 0;
+      max-width: 36rem;
+      font-family: Sora, sans-serif;
+      font-size: clamp(1.05rem, 2.4vw, 1.2rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+    .cap-closer em {
+      font-style: normal;
+      color: var(--leaf);
+    }
+
+    .steps {
+      display: grid;
+      gap: 18px;
+      counter-reset: step;
+      margin: 0;
+      padding: 0;
+    }
+    .steps li {
+      list-style: none;
+      position: relative;
+      padding: 0 0 0 52px;
+      color: var(--muted);
+    }
+    .steps li::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute; left: 0; top: 0;
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      display: grid; place-items: center;
+      font-family: Sora, sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #04110c;
+      background: var(--leaf);
+    }
+    .steps strong { display: block; color: var(--ink); margin-bottom: 4px; font-family: Sora, sans-serif; }
+    .steps a,
+    #conectar .section__lead a {
+      color: var(--leaf);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .steps a:hover,
+    #conectar .section__lead a:hover { opacity: 0.9; }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .plan {
+      padding: 20px 18px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(10, 31, 24, 0.65);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .plan h3 {
+      margin: 0;
+      font-family: Sora, sans-serif;
+      font-size: 1.05rem;
+    }
+    .plan .price {
+      margin: 0;
+      font-family: Sora, sans-serif;
+      font-size: 1.35rem;
+      color: var(--leaf);
+      font-weight: 700;
+    }
+    .plan .desc { margin: 0; color: var(--muted); font-size: 0.92rem; }
+    .plan .meta { margin: 0; color: var(--muted); font-size: 0.88rem; }
+    .plan .features {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+    }
+    .plan .features li {
+      color: var(--ink);
+      font-size: 0.88rem;
+      line-height: 1.35;
+      padding-left: 0;
+    }
+    .plan .wa-tag {
+      font-size: 11px;
+      font-family: Sora, sans-serif;
+      color: var(--leaf);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .plan.plan--enterprise {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: minmax(220px, 0.9fr) minmax(0, 1.6fr);
+      gap: 20px 32px;
+      align-items: start;
+      border-color: rgba(62, 207, 142, 0.45);
+      background: linear-gradient(165deg, rgba(26, 159, 99, 0.18), rgba(10, 31, 24, 0.75));
+    }
+    .plan.plan--enterprise .ent-intro {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .plan.plan--enterprise .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px 18px;
+      flex: initial;
+      align-content: start;
+    }
+    .plan .btn--wa {
+      background: #128c7e;
+      border-color: #25d366;
+      color: #fff;
+      text-align: center;
+    }
+    @media (max-width: 800px) {
+      .plan.plan--enterprise {
+        grid-template-columns: 1fr;
+      }
+      .plan.plan--enterprise .features {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 520px) {
+      .plan.plan--enterprise .features {
+        grid-template-columns: 1fr;
+      }
+    }
+    .plan label {
+      display: block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .plan input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #04110c;
+      color: var(--ink);
+      font-family: inherit;
+      margin-bottom: 8px;
+    }
+    .plan-status {
+      min-height: 1.2em;
+      font-size: 0.85rem;
+      color: var(--leaf);
+    }
+    .plan-status.is-error { color: var(--danger); }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 800px) {
+      .pillars { grid-template-columns: 1fr; }
+    }
+    .pillar h3 {
+      margin: 0 0 8px;
+      font-family: Sora, sans-serif;
+      font-size: 1.05rem;
+      color: var(--leaf);
+    }
+    .pillar p { margin: 0; color: var(--muted); }
+
+    .site-footer {
+      padding: 28px 0 40px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .site-footer__inner {
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px;
+    }
+    .site-footer a:hover { color: var(--leaf); }
+    #epayco-checkout-host {
+      margin: 24px auto 48px;
+      width: min(1080px, calc(100% - 32px));
+      min-height: 48px;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="#top">
+        <span class="brand__name">Tech<em>Guard</em></span>
+        <span class="brand__product">WhatsApp IA Bot Factory</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="wrap hero__content">
+        <div class="hero__brand-row">
+          <p class="hero__brand">Tech<em>Guard</em></p>
+          <p class="hero__product">WhatsApp IA Bot Factory</p>
+        </div>
+        <h1 class="hero__title">Bot WhatsApp a la medida de las necesidades de tu empresa.</h1>
+        <p class="hero__lead">
+          Respuestas automáticas, IA, pedidos, citas, facturas y escalado a humano — con runbook Meta listo para conectar tu número.
+        </p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary btn--lg" href="#planes">Ver planes y comprar</a>
+          <a
+            class="btn btn--lg btn--ghost"
+            href="https://www.refactorii.com/p2l-tenant/login/techguard-whatsapp-bot?redirect=/techguard-whatsapp-bot/mi-panel"
+          >Entrar a mi panel</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="que-es">
+      <div class="wrap">
+        <p class="section__tag">Producto</p>
+        <h2 class="section__title">Qué es TechGuard</h2>
+        <p class="section__lead">
+          Compra un plan de bot, obtienes un panel de empresa para skills, flujos y MCP.
+          Según el plan, tú o TechGuard configuran el número Meta WhatsApp Cloud API.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="capacidades">
+      <div class="wrap">
+        <p class="section__tag">Potencia</p>
+        <h2 class="section__title">Un bot mucho más potente</h2>
+        <p class="section__lead">
+          No es un chatbot genérico: orquesta lo que tu operación necesita en WhatsApp.
+        </p>
+        <ul class="cap-grid">
+          <li>
+            <span class="cap-grid__icon" aria-hidden="true">🤖</span>
+            <span class="cap-grid__label">Respuestas automáticas</span>
+          </li>
+          <li>
+            <span class="cap-grid__icon" aria-hidden="true">🧠</span>
+            <span class="cap-grid__label">IA / LLM</span>
+          </li>
+          <li>
+            <span class="cap-grid__icon" aria-hidden="true">📋</span>
+            <span class="cap-grid__label">Menús y botones</span>
+          </li>
+          <li>
+            <span class="cap-grid__icon" aria-hidden="true">🗄️</span>
+            <span class="cap-grid__label">Consulta tu base de datos</span>
+          </li>
+          <li>
+            <span class="cap-grid__icon" aria-hidden="true">📦</span>
+            <span class="cap-grid__label">Consulta y seguimiento de pedidos</span>
+          </li>
+          <li>
+            <span class="cap-grid__icon" aria-hidden="true">📅</span>
+            <span class="cap-grid__label">Agendar citas</span>
+          </li>
+          <li>
+            <span class="cap-grid__icon" aria-hidden="true">💰</span>
+            <span class="cap-grid__label">Consultar facturas</span>
+          </li>
+          <li>
+            <span class="cap-grid__icon" aria-hidden="true">👨‍💼</span>
+            <span class="cap-grid__label">Escalar a un humano</span>
+          </li>
+          <li>
+            <span class="cap-grid__icon" aria-hidden="true">⏰</span>
+            <span class="cap-grid__label">Enviar mensajes programados</span>
+          </li>
+          <li>
+            <span class="cap-grid__icon" aria-hidden="true">🔔</span>
+            <span class="cap-grid__label">Notificaciones</span>
+          </li>
+          <li>
+            <span class="cap-grid__icon" aria-hidden="true">📊</span>
+            <span class="cap-grid__label">Registrar toda la conversación</span>
+          </li>
+        </ul>
+        <p class="cap-closer">
+          Bot a la medida de las <em>necesidades de tu empresa</em>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="planes">
+      <div class="wrap">
+        <p class="section__tag">ePayco</p>
+        <h2 class="section__title">Planes de bot IA</h2>
+        <p class="section__lead">
+          Ingresa a la prueba gratuita o compra un plan. El cupo de mensajes está alineado a las tarifas
+          Meta WhatsApp Cloud API en Colombia (~ago 2026): marketing ≈ US$0.0125 · utility/auth ≈ US$0.0008;
+          respuestas de servicio en ventana 24&nbsp;h gratis hasta oct&nbsp;2026. Las plantillas marketing
+          de Meta se cobran en tu cuenta WABA aparte del plan TechGuard.
+          Rate card oficial:
+          <a href="https://developers.facebook.com/docs/whatsapp/pricing" target="_blank" rel="noopener">Precios WhatsApp Business Platform</a>.
+        </p>
+        <div class="plans" id="plans-root" aria-live="polite">
+          <p class="section__lead">Cargando planes…</p>
+        </div>
+        <div id="epayco-checkout-host" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="conectar">
+      <div class="wrap">
+        <p class="section__tag">WhatsApp</p>
+        <h2 class="section__title">Cómo se conecta el número</h2>
+        <p class="section__lead">
+          Tu número de WhatsApp Business se conecta a través de Meta (Facebook Developers).
+          Tú creas la app y el número; TechGuard es el <strong>webhook</strong>: la dirección
+          donde Meta entrega los mensajes para que el bot de tu empresa responda.
+        </p>
+        <ol class="steps">
+          <li>
+            <strong>Crea tu app en Meta</strong>
+            En <a href="https://developers.facebook.com/apps/" target="_blank" rel="noopener">My Apps</a>
+            crea una app, agrega el producto WhatsApp y vincula el número.
+            Guía:
+            <a href="https://developers.facebook.com/docs/whatsapp/cloud-api/get-started/" target="_blank" rel="noopener">Get started · Cloud API</a>.
+          </li>
+          <li>
+            <strong>Copia los datos del número</strong>
+            En <em>WhatsApp → API Setup</em> o
+            <a href="https://business.facebook.com/latest/whatsapp_manager/phone_numbers" target="_blank" rel="noopener">WhatsApp Manager</a>:
+            Phone Number ID, WABA ID, App ID, App Secret.
+            Token permanente desde
+            <a href="https://business.facebook.com/settings/system-users" target="_blank" rel="noopener">System Users</a>.
+            Docs números:
+            <a href="https://developers.facebook.com/docs/whatsapp/cloud-api/phone-numbers/" target="_blank" rel="noopener">Business phone numbers</a>.
+          </li>
+          <li>
+            <strong>Pégalos en tu panel TechGuard</strong>
+            En el dashboard de empresa (o TechGuard si tu plan lo incluye) guardas esos datos de forma segura.
+          </li>
+          <li>
+            <strong>Activa el webhook de TechGuard</strong>
+            En Meta: <em>WhatsApp → Configuration</em>
+            (<a href="https://developers.facebook.com/docs/whatsapp/cloud-api/guides/set-up-webhooks/" target="_blank" rel="noopener">Set up webhooks</a>).
+            Pegas la URL de webhook de TechGuard y el Verify Token. Ahí Meta enviará cada mensaje entrante.
+          </li>
+        </ol>
+        <p class="section__lead" style="margin-top:20px;margin-bottom:12px">
+          Enlaces rápidos:
+          <a href="https://developers.facebook.com/docs/whatsapp/cloud-api/get-started/" target="_blank" rel="noopener">Get started</a>
+          ·
+          <a href="https://developers.facebook.com/apps/" target="_blank" rel="noopener">My Apps</a>
+          ·
+          <a href="https://business.facebook.com/" target="_blank" rel="noopener">Business Suite</a>
+          ·
+          <a href="https://business.facebook.com/settings/system-users" target="_blank" rel="noopener">System Users</a>
+          ·
+          <a href="https://developers.facebook.com/docs/whatsapp/cloud-api/guides/set-up-webhooks/" target="_blank" rel="noopener">Webhooks</a>
+        </p>
+        <p class="section__lead" style="margin-top:0;margin-bottom:12px">
+          <strong style="color:var(--ink)">Precios Meta WhatsApp (oficial):</strong>
+          consulta el rate card por país y categoría (marketing, utility, auth, servicio) en
+          <a href="https://developers.facebook.com/docs/whatsapp/pricing" target="_blank" rel="noopener">developers.facebook.com/docs/whatsapp/pricing</a>
+          ·
+          <a href="https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing" target="_blank" rel="noopener">Business Messaging · Pricing</a>
+          · actualizaciones
+          <a href="https://developers.facebook.com/docs/whatsapp/pricing/updates-to-pricing/" target="_blank" rel="noopener">Updates to pricing</a>
+          (incluye COP y cambios oct&nbsp;2026).
+        </p>
+        <p class="section__lead" style="margin-top:0;margin-bottom:0">
+          <strong style="color:var(--ink)">¿Qué es TechGuard en este flujo?</strong>
+          No es tu número de WhatsApp. Es el servidor que recibe los mensajes (webhook) y ejecuta el
+          agente IA de tu empresa (skills, flujos, MCP) para contestar. Tú decides el contenido;
+          Meta lleva el mensaje; TechGuard lo procesa.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="negocio">
+      <div class="wrap">
+        <p class="section__tag">Empresa</p>
+        <h2 class="section__title">Skill · LSP · MCP del negocio</h2>
+        <p class="section__lead">
+          Son el <strong>contexto que tu empresa provee</strong> para que la IA responda con tu operación
+          (no con respuestas genéricas).
+        </p>
+        <div class="pillars">
+          <div class="pillar">
+            <h3>Skills</h3>
+            <p>
+              El “saber” del bot: menú, precios, FAQs, políticas y tonos en markdown.
+              Es lo que la IA lee para contestar como tu marca.
+            </p>
+          </div>
+          <div class="pillar">
+            <h3>LSP</h3>
+            <p>
+              Language Server Protocol de conversación: valida el flujo (slots faltantes, intents rotos)
+              para que el bot no improvise pasos incompletos al atender al cliente.
+            </p>
+          </div>
+          <div class="pillar">
+            <h3>MCP</h3>
+            <p>
+              Model Context Protocol: conecta datos vivos (pedidos, citas, facturas, CRM, BD)
+              para que las respuestas usen información real de tu negocio, no solo texto fijo.
+            </p>
+          </div>
+        </div>
+        <p class="section__lead" style="margin-top:28px;margin-bottom:0">
+          En corto: <strong style="color:var(--ink)">tú aportas el contexto (skills + LSP + MCP)</strong>;
+          el LLM usa ese contexto para responder; TechGuard orquesta el webhook y el agente.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <span>© TechGuard</span>
+      <a href="mailto:techguard_whatsappbot@gmail.com">techguard_whatsappbot@gmail.com</a>
+    </div>
+  </footer>
+
+  <script>
+(function () {
+  // En producción Nginx proxea /p2l-tenant/api/* → Node. /api/* en raíz da 404 sin CORS → NetworkError en fetch.
+  var API = 'https://www.refactorii.com/p2l-tenant/api/p2l-techguard-whatsapp-bot';
+  var FALLBACK_PLANS = [
+    {
+      id: 0, name: 'Trial', priceCop: 0, messagesPerMonth: 300,
+      maxSkills: 3, maxLsp: 3, maxMcp: 3, days: 5, waOwnership: 'customer', contactOnly: false,
+      description: 'Prueba gratuita del bot IA: crea tu empresa y entra al panel al instante.',
+      features: ['Panel empresa + runbook Meta', 'Webhook TechGuard'],
+      public: true
+    },
+    {
+      id: 1, name: 'Starter Bot', priceCop: 99000, messagesPerMonth: 4000,
+      maxSkills: 5, maxLsp: 5, maxMcp: 5, days: 30, waOwnership: 'techguard', contactOnly: false,
+      description: 'TechGuard programa skills, LSP y MCP. Tú compartes el contexto de tu empresa.',
+      features: ['Programados por TechGuard', 'Tú compartes el contexto de tu empresa'],
+      public: true
+    },
+    {
+      id: 2, name: 'Growth Bot', priceCop: 299000, messagesPerMonth: 15000,
+      maxSkills: 20, maxLsp: 20, maxMcp: 20, days: 30, waOwnership: 'hybrid', contactOnly: false,
+      description: 'Configuras skills, LSP y MCP tú mismo en el dashboard de empresa.',
+      features: ['Programados por ti en el dashboard de empresa'],
+      public: true
+    },
+    {
+      id: 3, name: 'Business Bot', priceCop: 799000, messagesPerMonth: 45000,
+      maxSkills: 50, maxLsp: 50, maxMcp: 50, days: 30, waOwnership: 'techguard', contactOnly: false,
+      description: 'Escala operativa con Meta/WABA operado por TechGuard.',
+      features: ['Meta/WABA operado por TechGuard'],
+      public: true
+    },
+    {
+      id: 4, name: 'Enterprise', priceCop: 0, messagesPerMonth: 0,
+      maxSkills: 0, maxLsp: 0, maxMcp: 0, days: 30, waOwnership: 'techguard', contactOnly: true,
+      whatsappUrl: 'https://wa.me/573000000000?text=' + encodeURIComponent('Hola TechGuard, quiero el plan Enterprise — bot WhatsApp a la medida'),
+      description: 'Desarrollo del bot a la medida: LLM, LSP, MCP, skills y orquestador de tu operación.',
+      features: [
+        '🤖 Respuestas automáticas',
+        '🧠 IA / LLM',
+        '📋 Menús y botones',
+        '🗄️ Consulta tu base de datos',
+        '📦 Consulta y seguimiento de pedidos',
+        '📅 Agendar citas',
+        '💰 Consultar facturas',
+        '👨‍💼 Escalar a un humano',
+        '⏰ Enviar mensajes programados',
+        '🔔 Notificaciones',
+        '📊 Registrar toda la conversación',
+        'Volumen de mensajes a medida (Meta CO)'
+      ],
+      public: true
+    }
+  ];
+
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function formatPrice(p) {
+    if (p && p.contactOnly) return 'Contáctanos';
+    var n = Number(p && p.priceCop != null ? p.priceCop : p) || 0;
+    if (n === 0) return 'Gratis';
+    return '$' + n.toLocaleString('es-CO') + ' COP';
+  }
+
+  function waLabel(w) {
+    if (w === 'techguard') return 'Meta: TechGuard';
+    if (w === 'hybrid') return 'Meta: híbrido';
+    return 'Meta: tú conectas';
+  }
+
+  /** Quita bullets que repiten lo ya dicho en desc/meta (skills/LSP/MCP/msgs). */
+  function cleanFeatures(p) {
+    var desc = String(p.description || '').toLowerCase();
+    var list = Array.isArray(p.features) ? p.features.slice() : [];
+    if (!list.length && !p.contactOnly) {
+      return [];
+    }
+    var seen = {};
+    return list.filter(function (f) {
+      var raw = String(f).trim();
+      var k = raw.toLowerCase();
+      if (!k || seen[k]) return false;
+      seen[k] = true;
+      // "20 skills" / "20 LSP" / "20 MCP"
+      if (/^\d+([.\s]\d+)?\s*(skills?|lsp|mcp)\b/i.test(raw)) return false;
+      // "15.000 mensajes/mes..."
+      if (/mensajes?/i.test(raw) && /mes|cupo|d[ií]as/i.test(raw)) return false;
+      // "3 skills de bot IA" style already covered by counts in meta
+      if (/^\d+.*\b(skills?|lsp|mcp)\b/i.test(raw) && raw.length < 40) return false;
+      // "LLM · LSP · MCP · skills" si la desc ya habla de eso
+      if (/llm/i.test(raw) && /lsp/i.test(raw) && /mcp/i.test(raw) && /skill/i.test(desc)) return false;
+      if (/desarrollo del bot a la medida/i.test(raw) && /a la medida/i.test(desc)) return false;
+      if (/orquestador de tu operaci[oó]n/i.test(raw) && /orquestador/i.test(desc)) return false;
+      return true;
+    });
+  }
+
+  function featuresHtml(p) {
+    var list = cleanFeatures(p);
+    if (!list.length) return '';
+    return '<ul class="features">' + list.map(function (f) {
+      return '<li>' + esc(f) + '</li>';
+    }).join('') + '</ul>';
+  }
+
+  function renderPlans(plans) {
+    var root = document.getElementById('plans-root');
+    if (!root) return;
+    root.innerHTML = plans.map(function (p) {
+      var id = p.id;
+      var contactOnly = !!p.contactOnly;
+      var isFree = !contactOnly && Number(p.priceCop) === 0;
+      var metaBits = [];
+      if (!contactOnly) {
+        if (p.maxSkills) metaBits.push(p.maxSkills + ' skills');
+        if (p.maxLsp) metaBits.push(p.maxLsp + ' LSP');
+        if (p.maxMcp) metaBits.push(p.maxMcp + ' MCP');
+        if (p.messagesPerMonth) metaBits.push(Number(p.messagesPerMonth).toLocaleString('es-CO') + ' msgs/mes');
+        if (p.days) metaBits.push(p.days + ' días');
+      }
+      var feats = featuresHtml(p);
+      var ctaBlock;
+      if (contactOnly) {
+        var wa = p.whatsappUrl || FALLBACK_PLANS[4].whatsappUrl;
+        ctaBlock =
+          '<a class="btn btn--primary btn--wa" href="' + esc(wa) + '" target="_blank" rel="noopener">' +
+          'Contáctanos en WhatsApp</a>';
+        return (
+          '<article class="plan plan--enterprise" data-plan-id="' + esc(id) + '">' +
+            '<div class="ent-intro">' +
+              '<h3>' + esc(p.name) + '</h3>' +
+              '<p class="price">' + esc(formatPrice(p)) + '</p>' +
+              '<p class="desc">' + esc(p.description || '') + '</p>' +
+              ctaBlock +
+            '</div>' +
+            feats +
+          '</article>'
+        );
+      }
+      var cta = isFree ? 'Ingresar a la prueba gratuita' : 'Comprar con ePayco';
+      ctaBlock =
+        '<div>' +
+          '<label>Nombre empresa</label>' +
+          '<input type="text" class="js-company" placeholder="Ej. Hato Viejo" autocomplete="organization" />' +
+          '<label>Email (Gmail del admin del panel)</label>' +
+          '<input type="email" class="js-email" placeholder="tu@gmail.com" autocomplete="email" />' +
+        '</div>' +
+        '<button type="button" class="btn btn--primary js-buy" data-plan-id="' + esc(id) + '">' + esc(cta) + '</button>' +
+        '<p class="plan-status js-status" role="status"></p>';
+      return (
+        '<article class="plan" data-plan-id="' + esc(id) + '">' +
+          '<h3>' + esc(p.name) + '</h3>' +
+          '<p class="price">' + esc(formatPrice(p)) + '</p>' +
+          '<p class="desc">' + esc(p.description || '') + '</p>' +
+          (metaBits.length ? '<p class="meta">' + esc(metaBits.join(' · ')) + '</p>' : '') +
+          feats +
+          '<p class="wa-tag">' + esc(waLabel(p.waOwnership)) + '</p>' +
+          ctaBlock +
+        '</article>'
+      );
+    }).join('');
+
+    root.querySelectorAll('.js-buy').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var card = btn.closest('.plan');
+        var planId = Number(btn.getAttribute('data-plan-id'));
+        var companyName = (card.querySelector('.js-company') || {}).value || '';
+        var buyerEmail = (card.querySelector('.js-email') || {}).value || '';
+        var statusEl = card.querySelector('.js-status');
+        buyPlan(planId, companyName.trim(), buyerEmail.trim(), btn, statusEl, plans);
+      });
+    });
+  }
+
+  function goToCompanyLogin(loginUrl, panelUrl, companyId) {
+    var url =
+      loginUrl ||
+      ('https://www.refactorii.com/p2l-tenant/login/techguard-whatsapp-bot?redirect=' +
+        encodeURIComponent(
+          panelUrl
+            ? panelUrl.replace('https://www.refactorii.com/p2l-tenant', '')
+            : '/techguard-whatsapp-bot/company/' + companyId
+        ));
+    window.location.href = url;
+  }
+
+  function setStatus(el, msg, isError) {
+    if (!el) return;
+    el.textContent = msg || '';
+    el.classList.toggle('is-error', !!isError);
+  }
+
+  function injectEpaycoForm(attrs) {
+    var host = document.getElementById('epayco-checkout-host');
+    host.innerHTML = '';
+    var form = document.createElement('form');
+    var s = document.createElement('script');
+    s.src = 'https://checkout.epayco.co/checkout.js';
+    Object.keys(attrs || {}).forEach(function (k) {
+      var v = attrs[k];
+      if (v == null) return;
+      if (k === 'class') {
+        s.className = String(v);
+        return;
+      }
+      s.setAttribute(k, String(v));
+    });
+    if (!s.className) s.className = 'epayco-button';
+    form.appendChild(s);
+    host.appendChild(form);
+    try {
+      host.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } catch (_) {}
+  }
+
+  async function buyPlan(planId, companyName, buyerEmail, btn, statusEl, plans) {
+    var plan = (plans || []).find(function (p) { return Number(p.id) === Number(planId); });
+    if (plan && plan.contactOnly) {
+      var wa = plan.whatsappUrl || (FALLBACK_PLANS[4] && FALLBACK_PLANS[4].whatsappUrl);
+      if (wa) window.open(wa, '_blank', 'noopener');
+      return;
+    }
+    if (!companyName || !buyerEmail) {
+      setStatus(statusEl, 'Indica nombre de empresa y email (Gmail del panel).', true);
+      return;
+    }
+    btn.disabled = true;
+    setStatus(statusEl, 'Preparando…', false);
+    try {
+      var price = plan ? Number(plan.priceCop) || 0 : -1;
+
+      if (price === 0) {
+        setStatus(statusEl, 'Creando tu empresa de prueba…', false);
+        var freeRes = await fetch(API + '/public/checkout-free', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ planId: planId, buyerEmail: buyerEmail, companyName: companyName })
+        });
+        var freeData = await freeRes.json().catch(function () { return {}; });
+        if (!freeRes.ok) throw new Error(freeData.message || freeData.error || 'Error al crear la prueba');
+        var co = freeData.company || {};
+        setStatus(
+          statusEl,
+          (freeData.reused ? 'Ya tenías una prueba. ' : 'Empresa creada. ') +
+            'Entrando al panel… Usa el mismo Gmail (' + buyerEmail + ') en Google.',
+          false
+        );
+        try {
+          if (freeData.companyKey) {
+            sessionStorage.setItem('tg_wa_company_key_' + co.id, freeData.companyKey);
+          }
+        } catch (_) {}
+        setTimeout(function () {
+          goToCompanyLogin(freeData.loginUrl, freeData.panelUrl, co.id);
+        }, 900);
+        return;
+      }
+
+      setStatus(statusEl, 'Preparando checkout ePayco…', false);
+      var cfgRes = await fetch(API + '/public/checkout-config', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ planId: planId, buyerEmail: buyerEmail, companyName: companyName })
+      });
+      var cfg = await cfgRes.json().catch(function () { return {}; });
+      if (!cfgRes.ok) throw new Error(cfg.message || cfg.error || 'Error checkout-config');
+
+      if (cfg.free) {
+        var free2 = await fetch(API + '/public/checkout-free', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ planId: planId, buyerEmail: buyerEmail, companyName: companyName })
+        });
+        var free2Data = await free2.json().catch(function () { return {}; });
+        if (!free2.ok) throw new Error(free2Data.message || 'Error checkout gratis');
+        setStatus(statusEl, 'Empresa de prueba lista. Entrando al panel…', false);
+        setTimeout(function () {
+          goToCompanyLogin(free2Data.loginUrl, free2Data.panelUrl, (free2Data.company || {}).id);
+        }, 900);
+        return;
+      }
+
+      if (!cfg.epaycoButtonAttributes) throw new Error('Sin atributos ePayco');
+      setStatus(statusEl, 'Abriendo ePayco…', false);
+      injectEpaycoForm(cfg.epaycoButtonAttributes);
+    } catch (e) {
+      setStatus(statusEl, e.message || String(e), true);
+    } finally {
+      btn.disabled = false;
+    }
+  }
+
+  async function loadPlans() {
+    try {
+      var res = await fetch(API + '/public/plans', { headers: { Accept: 'application/json' } });
+      var data = await res.json().catch(function () { return {}; });
+      if (!res.ok || !Array.isArray(data.plans) || !data.plans.length) throw new Error('fallback');
+      renderPlans(data.plans);
+    } catch (_) {
+      renderPlans(FALLBACK_PLANS);
+    }
+  }
+
+  loadPlans();
+})();
+  </script>
+</body>
+</html>
