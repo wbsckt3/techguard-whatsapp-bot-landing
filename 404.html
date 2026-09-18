@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Panel de empresa — TechGuard Bot WhatsApp IA</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#ffffff" />
+  <script>
+    // GitHub Pages sirve este archivo para rutas inexistentes. Lo usamos para que
+    // /techguard-whatsapp-bot/company/<id> funcione como URL real, sin hash ni query.
+    (function () {
+      var path = location.pathname;
+      var m = path.match(/^(.*?)(?:\/techguard-whatsapp-bot)?\/company\/[a-f\d]{24}\/?$/i);
+      if (!m) return;
+      var base = m[1] || '';
+      document.write(
+        '<link rel="icon" href="' + base + '/assets/techguard-mark.svg" type="image/svg+xml" />' +
+        '<link rel="stylesheet" href="' + base + '/panel/panel.css?v=1789761358905" />'
+      );
+      window.__TG_PANEL_BASE = base;
+    })();
+  </script>
+</head>
+<body>
+  <div id="tg-root" class="tg-co">
+    <p class="tg-loading">Cargando tu panel…</p>
+  </div>
+  <script>
+    (function () {
+      var base = window.__TG_PANEL_BASE;
+      if (base === undefined) {
+        document.getElementById('tg-root').innerHTML =
+          '<div style="font-family:system-ui,sans-serif;padding:48px 16px;text-align:center;color:#475569">' +
+          '<h1 style="font-size:1.25rem;margin:0 0 8px">Página no encontrada</h1>' +
+          '<p style="margin:0"><a href="/" style="color:#1a9f63">Volver al inicio</a></p></div>';
+        return;
+      }
+      var s = document.createElement('script');
+      s.src = base + '/panel/panel.js?v=1789761358905';
+      document.body.appendChild(s);
+    })();
+  </script>
+</body>
+</html>
