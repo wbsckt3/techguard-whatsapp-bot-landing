@@ -537,6 +537,44 @@
       width: min(1080px, calc(100% - 32px));
       min-height: 48px;
     }
+
+    /* BOTONES FLOTANTES */
+.fab-stack {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.whatsapp-fab,
+.contact-fab {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+    color: #fff;
+    text-decoration: none;
+}
+.whatsapp-fab {
+    background: #25d366;
+}
+.whatsapp-fab:hover {
+    background: #1ebe5d;
+}
+.contact-fab {
+    background: #147a4c;
+}
+.contact-fab:hover {
+    background: #0f5e3b;
+}
   </style>
 </head>
 <body>
